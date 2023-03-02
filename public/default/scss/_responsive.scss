@@ -1,0 +1,917 @@
+.b-header__news-category:after {
+    content: "xxl ";
+    content: none !important;
+    font-size: 0.8em;
+    color: $danger;
+}
+
+/* b-navbar-toggler */
+.b-navbar-toggler {
+    width: 14px;
+    height: 16px;
+    position: relative;
+    outline: none !important;
+    border: none;
+    span {
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        border-radius: 2px;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+        background-color: $dark;
+        &:nth-child(1) {
+            top: 0;
+        }
+        &:nth-child(2) {
+            top: 7px;
+        }
+        &:nth-child(3) {
+            top: 14px;
+        }
+    }
+
+    // opened
+    &.is-active,
+    &[aria-expanded="true"] {
+        span {
+            &:nth-child(1) {
+                top: 10px;
+                width: 0;
+                left: 50%;
+            }
+            &:nth-child(2) {
+                transform: rotate(45deg);
+            }
+            &:nth-child(3) {
+                top: 7px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
+/* b-fixed-column */
+.dataTables_scrollHeadInner {
+    min-width: 100% !important;
+}
+.b-fixed-column {
+    width: 100% !important;
+    @include media-breakpoint-down(lg) {
+        tr {
+            .dtfc-fixed-left {
+                background-color: $light !important;
+            }
+        }
+    }
+    th,
+    td {
+        white-space: nowrap;
+    }
+}
+
+/* xl only */
+@include media-breakpoint-only(xl) {
+    .b-header__news-category:after {
+        content: "xl";
+    }
+
+    .b-main-nav {
+        .nav-item {
+            margin-right: 15px;
+        }
+    }
+}
+
+/* xl down */
+@include media-breakpoint-down(xl) {
+    .b-how-mining-work {
+        &__item {
+            padding: 0 10px;
+        }
+        &__line {
+            flex: 0 0 40px;
+        }
+    }
+
+    .b-news-topic-item__title {
+        font-size: 24px;
+    }
+
+    .b-news-base-item {
+        padding: 15px 5px;
+    }
+
+    .b-news-short-item {
+        padding: 10px 5px;
+    }
+
+    .b-footer__text {
+        margin-top: 62px;
+    }
+}
+
+/* lg only */
+@include media-breakpoint-only(lg) {
+    .b-header__news-category:after {
+        content: "lg";
+    }
+
+    .b-data-center__img-wrap {
+        flex: 0 0 20.4%;
+    }
+
+    .b-news-view__img-wrap img {
+        height: 350px;
+        object-fit: cover;
+    }
+
+    .b-data-center-item__img,
+    .b-event-item__img {
+        height: 330px;
+    }
+}
+
+/* lg down */
+@include media-breakpoint-down(lg) {
+    .b-main-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        background-color: $light;
+        overflow: auto;
+        .navbar-nav {
+            margin: 20px 40px 40px;
+        }
+        .nav-item {
+            margin-right: 0;
+            &.active,
+            &:hover {
+                .nav-link {
+                    opacity: 0.7;
+                }
+            }
+        }
+        .nav-link {
+            font-size: 24px;
+            padding-top: 1.2rem;
+            padding-bottom: 1.2rem;
+        }
+        .dropdown-toggle {
+            &:after {
+                font-size: 30px;
+                margin-left: 20px;
+            }
+            &[aria-expanded="true"]:after {
+                margin-bottom: -6px;
+                transform: rotate(-135deg);
+            }
+        }
+        .dropdown-menu {
+            border: none;
+            box-shadow: none;
+            background: none;
+            max-height: inherit;
+            margin: 0;
+            padding: 0;
+
+            .scroll-content {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            flex: 0 0 33.3333%;
+            font-size: 24px;
+            color: $primary;
+            padding-left: 0;
+            padding-right: 0;
+            white-space: inherit;
+            &.dropdown-item:hover,
+            &.dropdown-item.active {
+                background-color: transparent;
+                opacity: 0.7;
+            }
+            // &:before {
+            //     content: "";
+            //     display: inline-block;
+            //     width: 8px;
+            //     height: 8px;
+            //     border-radius: 50%;
+            //     background-color: $primary;
+            //     margin-right: 20px;
+            //     vertical-align: middle;
+            // }
+        }
+        .nav-item:after {
+            content: none !important;
+        }
+    }
+
+    .b-change-lang {
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    .b-data-center-map {
+        position: inherit;
+        height: 800px;
+        margin-top: -500px;
+    }
+
+    .b-data-center-right {
+        position: initial;
+        width: 100%;
+        &__inner {
+            overflow: visible;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .b-news-view {
+        &__heading {
+            font-size: 36px;
+            line-height: 1.1;
+        }
+    }
+
+    .b-news-topic-item__title {
+        font-size: 20px;
+    }
+
+    .b-news-base-item {
+        padding: 10px 5px;
+    }
+
+    .b-data-center-item__title {
+        font-size: 20px;
+    }
+}
+
+/* md only */
+@include media-breakpoint-only(md) {
+    .b-header__news-category:after {
+        content: "md";
+    }
+
+    .b-how-mining-work__item {
+        padding: 10px 0;
+    }
+
+    .b-contacts-info {
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-left: 20px;
+    }
+
+    .b-footer {
+        padding-bottom: 32px;
+        &__bot-box {
+            padding-top: 32px;
+        }
+        &__text {
+            margin-top: 62px;
+        }
+    }
+
+    .b-news-first-item {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+
+    .b-aside-news__item {
+        border-bottom: none;
+        margin-bottom: 11px;
+    }
+}
+
+/* md down */
+@include media-breakpoint-down(md) {
+    #content {
+        min-height: auto;
+    }
+
+    .b-header {
+        .navbar {
+            margin-bottom: 21px;
+        }
+        &__news-category {
+            margin-left: 31px;
+        }
+        &__bottom {
+            margin-bottom: 4px;
+        }
+    }
+
+    .b-main-nav {
+        .dropdown-item {
+            flex: 0 0 50%;
+        }
+    }
+
+    .b-page-header {
+        &__desc {
+            font-size: 14px;
+        }
+    }
+
+    .b-theme-modal {
+        .b-heading {
+            font-size: 32px;
+            line-height: 40px;
+        }
+        .modal-body {
+            padding-top: 54px;
+        }
+    }
+
+    .b-mining-advantages {
+        margin-bottom: -26px;
+        > [class^="col-"] {
+            margin-bottom: 26px;
+        }
+    }
+
+    .b-how-mining-work__line {
+        flex: 0 0 100px;
+    }
+
+    .b-mining-service__content {
+        padding-left: 0;
+    }
+
+    .b-news-view {
+        &__heading {
+            font-size: 26px;
+        }
+    }
+
+    .b-firmware-view__img-wrap,
+    .b-equipment-slide {
+        max-width: 250px;
+    }
+
+    .b-data-center {
+        > [class^="col-"] {
+            margin-bottom: 20px;
+        }
+        &__img-wrap {
+            flex: 0 0 30%;
+        }
+    }
+
+    .b-data-center-view {
+        &__bottom {
+            margin-bottom: 0;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        &__btn {
+            width: 100%;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        &__img-wrap {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+
+    .b-data-center-right {
+        &__inner {
+            padding-top: 42px;
+        }
+        &__title {
+            font-size: 40px;
+            line-height: 48px;
+        }
+    }
+
+    .b-wiki__search {
+        margin-top: -20px;
+        padding-bottom: 30px;
+    }
+
+    .b-news-topic-item {
+        &__img {
+            height: 248px;
+        }
+        &__title {
+            font-size: 18px;
+        }
+    }
+
+    .b-news-main-item {
+        &__img {
+            height: 282px;
+        }
+    }
+
+    .b-news-base-item {
+        padding: 14px 20px;
+    }
+
+    .b-news-short-item {
+        padding: 12px 20px;
+    }
+
+    .b-news-category {
+        .nav-link {
+            flex: 0 0 auto;
+            width: calc(31% - 1px);
+            position: relative;
+            text-align: center;
+            font-size: 14px;
+            line-height: 24px;
+        }
+        &__bigger-width {
+            width: calc(38% - 1px) !important;
+        }
+    }
+
+    .b-data-center-item {
+        &__img {
+            height: 300px;
+        }
+        &__title {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+
+    .b-investment-data {
+        margin-top: 20px;
+    }
+
+    .b-event-item__img {
+        height: 300px;
+    }
+
+    .b-subscribe {
+        &__form {
+            max-width: inherit;
+        }
+    }
+
+    .b-news-page {
+        &__col-first {
+            border-right: none;
+        }
+        &__show-more {
+            margin-top: 30px;
+        }
+    }
+
+    .b-news-first-item {
+        width: calc(100% - 40px) !important;
+    }
+
+    .b-subscribe-v2 {
+        margin-top: 30px;
+        margin-bottom: 11px;
+    }
+
+    .b-aside-right {
+        margin-top: 30px;
+    }
+
+    .b-aside-more-in {
+        padding: 0;
+        background-color: transparent;
+        &__heading {
+            font-size: 30px;
+            line-height: 40px;
+        }
+    }
+
+    .b-ps-block-info {
+        &__heading {
+            font-size: 13px;
+        }
+        &__value {
+            font-size: 30px;
+            line-height: 40px;
+            margin-bottom: 68px;
+        }
+        &__count-down {
+            font-size: 13px;
+            gap: 25px;
+            strong {
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
+    }
+
+    .b-exchange-data {
+        padding: 10px 22px;
+    }
+
+    .b-coin-chart {
+        margin-top: 20px;
+        &__text {
+            min-width: auto;
+        }
+        &__text-heading {
+            font-size: 13px;
+        }
+        &__text-value {
+            font-size: 30px;
+            line-height: 40px;
+            margin: 5px 0 2px;
+        }
+        &__text-changes {
+            font-size: 13px;
+        }
+    }
+
+    .b-ps-data {
+        &__col-right {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        &__nav {
+            margin: 0 auto 30px;
+            width: fit-content;
+            max-width: 100%;
+            &-inner {
+                white-space: nowrap;
+                flex-wrap: inherit;
+                overflow: auto;
+            }
+        }
+        .table {
+            font-size: 12px;
+            line-height: 16px;
+            thead {
+                th {
+                    padding-top: 17px;
+                    padding-bottom: 17px;
+                }
+                .sorting:before,
+                .sorting:after {
+                    top: 16px;
+                }
+            }
+            tbody td {
+                padding-top: 9.5px;
+                padding-bottom: 9.5px;
+            }
+        }
+    }
+
+    .b-equipment {
+        .table {
+            font-size: 12px;
+            line-height: 16px;
+            thead th {
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+        }
+    }
+}
+
+/* sm only */
+@include media-breakpoint-only(sm) {
+    .b-header__news-category:after {
+        content: "sm";
+    }
+}
+
+/* sm down */
+@include media-breakpoint-down(sm) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .b-theme-modal {
+        &__close {
+            top: 16px;
+            right: 16px;
+            img {
+                width: 35px;
+                height: 35px;
+            }
+        }
+        .modal-body {
+            padding: 54px 16px 16px;
+        }
+    }
+
+    .b-header {
+        &.is-active {
+            .b-header__news-category {
+                display: none;
+            }
+        }
+        .navbar {
+            margin-bottom: 16px;
+        }
+        &__news-category {
+            margin-left: 0;
+            margin-bottom: 27px;
+        }
+    }
+
+    .b-main-nav {
+        .navbar-nav {
+            margin: 0 20px;
+        }
+        .dropdown-item {
+            font-size: 18px;
+        }
+    }
+
+    .b-page-header {
+        &__title {
+            font-size: 38px;
+        }
+    }
+
+    .b-news-view {
+        &__heading {
+            font-size: 22px;
+        }
+    }
+
+    .b-author-block {
+        &__heading {
+            font-size: 0.9rem;
+        }
+    }
+
+    .b-social-media {
+        width: 100%;
+        justify-content: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        .list-inline-item:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    .b-theme-form {
+        &__heading {
+            text-align: left;
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 14px;
+        }
+        &__btn {
+            margin-top: 12px;
+        }
+    }
+
+    .b-wiki {
+        &__inner {
+            padding: 16px;
+            padding-top: 13px;
+            margin-bottom: 28px;
+        }
+        &__search {
+            margin-bottom: 13px;
+        }
+        &__nav {
+            margin-bottom: 11px;
+            .nav-link {
+                font-size: 14px;
+                line-height: 17px;
+                flex: 0 0 11.5%;
+                padding: 0 1rem;
+                &:after {
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
+
+    .b-data-center-btn {
+        .btn,
+        .btn-group {
+            width: 100%;
+        }
+        .btn {
+            margin-top: 20px;
+        }
+    }
+
+    .b-data-center {
+        &__item {
+            height: auto;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__img-wrap {
+            margin-bottom: 10px;
+        }
+        &__right-col {
+            padding-left: 0;
+            width: 100%;
+        }
+    }
+
+    .b-data-center-right {
+        &__inner {
+            padding-top: 29px;
+        }
+        &__title {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+        &__desc {
+            margin-bottom: 15px;
+        }
+    }
+
+    .b-data-center-view {
+        &__heading {
+            font-size: 40px;
+            line-height: 48px;
+            margin-bottom: 4px;
+        }
+    }
+
+    .b-mining-advantages {
+        .owl-item {
+            padding-top: 17px;
+        }
+        &__item:hover {
+            &,
+            img {
+                transform: none;
+            }
+        }
+    }
+
+    .b-how-mining-work {
+        &__item {
+            padding: 10px 0;
+            flex-direction: column;
+        }
+        img {
+            margin: 0 0 5px;
+        }
+        &__line {
+            display: none;
+        }
+    }
+
+    .b-mining-service {
+        .btn {
+            width: 100%;
+        }
+    }
+
+    .b-pool-rating {
+        &__heading {
+            font-size: 16px;
+            line-height: 20px;
+            img {
+                width: 24px;
+            }
+        }
+        .dtfc-fixed-left:first-child,
+        thead th:first-child,
+        tbody td:first-child {
+            display: none;
+        }
+        .dtfc-fixed-left:nth-child(2) {
+            left: 0 !important;
+        }
+    }
+
+    .b-advantages {
+        .owl-item {
+            padding-top: 18px;
+        }
+    }
+
+    .b-firmware {
+        &__item {
+            padding-top: 10px;
+            padding-bottom: 20px;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__title {
+            text-align: center;
+        }
+        &__right-col {
+            padding-left: 0;
+        }
+        &__btn {
+            margin-top: 0;
+            [class^="col-"]:first-child .btn {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .b-firmware-view {
+        &__heading {
+            font-size: 40px;
+            line-height: 48px;
+            margin-bottom: 25px;
+        }
+        &__img-wrap {
+            max-width: none;
+        }
+        &__btn {
+            width: 100%;
+        }
+    }
+
+    .b-equipment {
+        &__nav-wrap {
+            margin-bottom: 30px;
+        }
+    }
+
+    .b-equipment-quick-view {
+        &__title {
+            font-size: 24px;
+            line-height: 33px;
+        }
+    }
+
+    .b-equipment-view {
+        &__heading {
+            font-size: 40px;
+            line-height: 48px;
+            margin-bottom: 25px;
+        }
+    }
+
+    .b-equipment-slide {
+        max-width: none;
+    }
+
+    .b-contacts-info {
+        margin-top: 32px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .b-footer {
+        padding-bottom: 32px;
+        &__social-network {
+            text-align: left;
+            padding-top: 24px;
+        }
+        &__text {
+            margin-top: 35px;
+            margin-bottom: 42px;
+        }
+        &__bot-box {
+            padding-top: 28px;
+        }
+    }
+
+    .b-investment-data {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .b-promotion-x {
+        display: none;
+    }
+
+    .b-news-list {
+        &:before {
+            content: none;
+        }
+        .b-news-item:nth-child(2) {
+            padding-top: 19px;
+        }
+    }
+
+    .b-news-item {
+        width: calc(100% - 40px) !important;
+    }
+
+    .b-pool-stats__nav {
+        white-space: nowrap;
+        flex-wrap: inherit;
+        overflow: auto;
+        margin-bottom: 20px;
+    }
+
+    .b-exchange-data {
+        margin-top: 20px;
+    }
+
+    .b-ps-block-info {
+        &__value {
+            margin-bottom: 20px;
+        }
+    }
+}

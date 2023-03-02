@@ -1,0 +1,39 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # my custom
+    # Redirect from www to without
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+    # Remove page=1 from url
+    RewriteCond %{QUERY_STRING} ^(.*)&?page=1$
+    RewriteRule ^(.*)/?$ /$1?%1%2 [R=301,L]
+
+    # Remove multiple leading slashes (directly after the TLD)
+    RewriteCond %{THE_REQUEST} \S/{2,}
+    RewriteRule (.*) /$1/ [R=301,L]
+
+    # If /public/ is part of original URL then remove it
+    RewriteCond %{THE_REQUEST} /public/index.php/(\S*) [NC]
+    RewriteRule ^ /%1 [R=301,L]
+
+    RewriteCond %{THE_REQUEST} /public/(\S*) [NC]
+    RewriteRule ^ /%1 [R=301,L]
+    # end
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder... - move to root htaccess
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>

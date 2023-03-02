@@ -1,0 +1,53 @@
+$theme-colors: (
+    "success": #21c741,
+    "info": #4484e6,
+    "dark": #222b45,
+    "primary": #3455c3,
+    "light": #f7f9fc,
+    "danger": #cb444a,
+);
+
+$success: #21c741;
+$info: #4484e6;
+$dark: #222b45;
+$primary: #3455c3;
+$light: #f7f9fc;
+$danger: #cb444a;
+
+$theme-br: 16px;
+
+// input and button
+$input-btn-padding-x: 1.2rem;
+$input-btn-padding-y: 0.65rem;
+
+// input and button lg
+$input-btn-padding-x-lg: 1.4rem;
+$input-btn-padding-y-lg: 0.9rem;
+
+$grid-gutter-width: 16px !default;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1320px,
+);
+
+$container-max-widths: (
+    sm: 540px,
+    // md: 720px,
+    md: 714px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1272px,
+);
+
+// libs
+@import "../libs/bootstrap/scss/bootstrap";
+
+// theme
+@import "basic";
+@import "theme";
+@import "responsive";
